@@ -1,3 +1,8 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+import * as express from 'express';
+
 import app from "./server"
 
 // app.listen(port, callbackFn())
