@@ -2,6 +2,7 @@ import express from 'express';
 import router from './router';
 import morgan from 'morgan'
 import { protect } from './modules/auth';
+import { createNewUser, loginUser } from './handlers/user';
 
 
 const app = express();
@@ -24,6 +25,9 @@ app.get('/',(req, res)=>{ // takes in 2 parameters. route extension and req, res
 })
 
 app.use('/api',protect, router)
+
+app.post('/user', createNewUser)
+app.post('/signin', loginUser)
 
 export default app
 
