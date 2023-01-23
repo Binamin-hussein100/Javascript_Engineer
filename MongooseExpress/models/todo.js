@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 
 const TodoSchema = new mongoose.Schema({
-    record:{type:String, required:true},
+    record:{type:String},
     date:{type:Number,default:100},
 
 })
