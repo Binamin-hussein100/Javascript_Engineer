@@ -12,4 +12,11 @@ app.use('/',(req,res)=>{
     res.send("hello world!");
 })
 
+app.post('/api/create',async (req, res)=>{
+    const record = req.body
+    const response = await Todo.create(record)
+    console.log(response)
+    res.json({status:"ok"})
+})
+
 app.listen(port, ()=>{`listen on ${port}`})
