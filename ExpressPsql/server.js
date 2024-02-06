@@ -2,7 +2,7 @@
 const express = require("express");
 const studentRoutes = require('./src/student/routes')
 const app = express();
-const port = 3000
+const port = 3001
 
 // midelware to convert all handlers to json
 app.use(express.json())
@@ -19,3 +19,13 @@ app.get('/',(req,res)=>{
 app.use("/students", studentRoutes)
 
 app.listen(port, ()=>console.log(`app listening on ${port}`))
+
+
+
+record.find(i =>{
+    if(i.result === 'w'){
+        return i.year
+    }else{
+        return undefined
+    }
+})
